@@ -7,16 +7,23 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import javax.sql.DataSource;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
+    private DataSource dataSource;
+
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
-                .inMemoryAuthentication()
-                .withUser("user").password("1234").roles("USER").and()
-                .withUser("admin").password("admin").roles("USER", "ADMIN");
+                .jdbcAuthentication()
+                .dataSource(dataSource)
+                .usersByUsernameQuery("select username, password, enabled, id from users where username = ?")
+                .authoritiesByUsernameQuery("select authority, username, user_id" +
+                        " from authorities, users where id = user_id and username = ?");
     }
 
     protected void configure(HttpSecurity httpSecurity) throws Exception {
