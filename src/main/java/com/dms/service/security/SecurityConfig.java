@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
 
@@ -17,13 +18,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private DataSource dataSource;
 
     @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
                 .jdbcAuthentication()
                 .dataSource(dataSource)
                 .usersByUsernameQuery("select username, password, enabled, id from users where username = ?")
-                .authoritiesByUsernameQuery("select authority, username, user_id" +
-                        " from authorities, users where id = user_id and username = ?");
+                .authoritiesByUsernameQuery("select username, authority, user_id" +
+                        " from authorities, users where id = user_id and username = ?")
+                .passwordEncoder(bCryptPasswordEncoder);
     }
 
     protected void configure(HttpSecurity httpSecurity) throws Exception {
