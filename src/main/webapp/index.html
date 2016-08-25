@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>DMS Application</title>
-    <link href="styles/main.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="main">
         <div class="header">Header</div>
             <div class="content">Content</div>
-            <div class="sidebar">Sidebar</div>
+            <div class="sidebar">Sidebar
+                <form action="logout" method="post">
+                    <input type="submit" value="Logout">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                </form>
+            </div>
         <div class="footer">Footer</div>
     </div>
 </body>
