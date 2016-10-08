@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://thymeleaf.org"
-      xmlns:tiles="http://thymeleaf.org">
+      xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Log In DMS App</title>
-    <link href="../../css/login.css" th:href="@{/css/login.css}" rel="stylesheet"/>
+    <link href="/resources/css/login.css" th:href="@{/resources/css/login.css}" rel="stylesheet"/>
 </head>
 <body>
-<div class="container" tiles:fragment="content">
-    <img src="../../img/user-group.png">
+<div class="container">
+    <img src="/resources/images/user-group.png">
     <form id="login" th:action="@{/login}" method="post">
         <div th:if="${param.error}" class="alert alert-error">
             Invalid username or password

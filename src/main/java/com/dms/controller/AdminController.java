@@ -16,12 +16,12 @@ public class AdminController {
 
     @RequestMapping
     public String adminPage(ModelMap modelMap) {
-        return "admin.html";
+        return "admin";
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test() {
         adminService.adminTest();
-        return "admin.html";
+        return "admin";
     }
 }
