@@ -21,4 +21,6 @@
         <property name="password" value="${database.password}"/>
     </bean>
 
+    <bean id="customAuthenticationSuccessHandler" class="com.dms.service.security.CustomAuthenticationSuccessHandler" />
+
 </beans>

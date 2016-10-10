@@ -23,6 +23,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
+    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
+
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
                 .jdbcAuthentication()
@@ -31,6 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery("select username, authority, user_id" +
                         " from authorities, users where id = user_id and username = ?")
                 .passwordEncoder(bCryptPasswordEncoder);
+//        .inMemoryAuthentication()
+//                .withUser("admin").password("admin").roles("ADMIN")
+//                    .and()
+//                .withUser("alex").password("alex").roles("USER");
     }
 
     protected void configure(HttpSecurity httpSecurity) throws Exception {
@@ -43,7 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .and()
                 .formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/index", true)
+                   // .defaultSuccessUrl("/index", true)
+                    .successHandler(customAuthenticationSuccessHandler)
                     .failureUrl("/login?error=true")
                         .and()
                     .httpBasic()
