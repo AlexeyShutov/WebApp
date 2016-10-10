@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>DMS Application</title>
-    <link href="/resources/css/main.css" th:href="/resources/css/main.css" rel="stylesheet">
+    <link href="/resources/css/main.css" th:href="@{/resources/css/main.css}" rel="stylesheet">
 </head>
 <body>
-    <div class="main">
-        <div class="header">Header</div>
-            <div class="content">Content</div>
-            <div class="sidebar">Sidebar
-                <form action="logout" method="post">
-                    <input type="submit" value="Logout">
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-                </form>
-            </div>
-        <div class="footer">Footer</div>
+<div class="main">
+    <div class="header">Header</div>
+    <div class="content">Content</div>
+    <div class="sidebar">Sidebar
+        <form action="logout" method="post">
+            <input type="submit" value="Logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
     </div>
+    <div class="footer">Footer</div>
+</div>
 </body>
 </html>
