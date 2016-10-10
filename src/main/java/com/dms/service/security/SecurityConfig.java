@@ -50,15 +50,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .and()
                 .formLogin()
                     .loginPage("/login")
-                   // .defaultSuccessUrl("/index", true)
+                    .defaultSuccessUrl("/index", true)
                     .successHandler(customAuthenticationSuccessHandler)
                     .failureUrl("/login?error=true")
                         .and()
                     .httpBasic()
                         .and()
                 .logout()
-                .logoutSuccessUrl("/login")
-                    .and()
+                    .logoutSuccessUrl("/login")
+                        .and()
                 .sessionManagement()
                     .maximumSessions(1);
     }
