@@ -1,29 +1,37 @@
 .main {
-    width: 960px;
+    width: 1080px;
     margin: 0 auto;
 }
 
 .header {
-    background: #CCC;
-    height: 200px;
+    background: #0E6BCC;
+    height: 90px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .footer {
     clear: both;
-    height: 40px;
-    background: #AAA;
+    height: 90px;
+    background: #0E6BCC;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .content {
-    width: 600px;
-    float: left;
-    height: 600px;
-    background: #EEE;"
+    width: 860px;
+    float: right;
+    height: 770px;
+    background: #EEE;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .sidebar {
-    width: 360px;
-    float: right;
-    height: 500px;
-    background: #DDD;
+    width: 200px;
+    float: left;
+    height: 770px;
+    background: #605E61;
+    padding-left: 10px;
+    padding-top: 10px;
 }
