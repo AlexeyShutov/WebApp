@@ -40,8 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .withUser("alex").password("alex").roles("USER");
     }
 
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
+    protected void configure(HttpSecurity http) throws Exception {
+        http
                 .authorizeRequests()
                     .antMatchers("/login").permitAll()
                     .antMatchers("/resources/**").permitAll()

@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping(value = "/admin")
-public class AdminController {
+public class AdminController extends BaseController {
 
     @Autowired
     private AdminService adminService;
 
     @RequestMapping
-    public String adminPage(ModelMap modelMap) {
+    public String adminPage(ModelMap model) {
+        model.addAttribute("currentUser", super.getCurrentUsername());
         return "admin";
     }
 

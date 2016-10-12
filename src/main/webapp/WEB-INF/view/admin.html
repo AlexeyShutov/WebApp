@@ -11,6 +11,7 @@
         <h1>Welcome to admin page</h1>
     </div>
    <div>
+       Current User: <b th:text="${currentUser}"></b>
        <form th:action="@{/logout}" method="post">
            <input type="submit" value="Logout"/>
        </form>

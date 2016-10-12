@@ -11,7 +11,9 @@
 <div class="main">
     <div class="header">Header</div>
     <div class="content">Content</div>
-    <div class="sidebar">Sidebar
+    <div class="sidebar">
+        Sidebar <br>
+        Current User: <b th:text="${currentUser}"></b>
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Logout"/>
         </form>
