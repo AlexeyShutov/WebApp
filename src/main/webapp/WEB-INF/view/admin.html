@@ -5,11 +5,37 @@
 <head>
     <meta charset="UTF-8">
     <title>DMS - Admin page</title>
+    <link href="../../resources/css/bootstrap.css" th:href="@{/resources/css/bootstrap.css}" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        <h1>Welcome to admin page</h1>
-    </div>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">DMS</a>
+            </div>
+
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Admin Home</a></li>
+                    <li><a href="#">User Management</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">My profile</a></li>
+                            <li><a href="#">Edit profile</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
    <div>
        Current User: <b th:text="${currentUser}"></b>
        <form th:action="@{/logout}" method="post">
