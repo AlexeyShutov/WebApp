@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>DMS - Admin page</title>
     <link href="../../resources/css/bootstrap.css" th:href="@{/resources/css/bootstrap.css}" rel="stylesheet" />
+    <link href="../../resources/css/custom.bootstrap.css" th:href="@{/resources/css/customBootstrap.css}" rel="stylesheet" />
     <script src="../../resources/js/jquery-3.1.1.min.js"></script>
     <script src="../../resources/js/bootstrap.js"></script>
 </head>
@@ -19,30 +20,42 @@
             </div>
 
             <div>
+                <form id="logoutForm" th:action="@{/logout}" method="post"></form>
+
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Admin Home</a></li>
                     <li><a href="#">User Management</a></li>
                     <li><a href="#">Settings</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <b th:text="${currentUser}" style="padding: 0 5px"></b>
+                            <img src="/resources/images/user-default.png" class="img-circle" width="20" height="20"/>
+                            <span class="caret"></span>
+                        </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">My profile</a></li>
                             <li><a href="#">Edit profile</a></li>
                             <li><a href="#">Help</a></li>
-                            <li><a th:href="#">Logout</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="javascript:;" onclick=submitById("logoutForm");>Logout</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
-            </div>
 
+            </div>
         </div>
     </nav>
 
-   <div>
-       Current User: <b th:text="${currentUser}"></b>
-       <form th:action="@{/logout}" method="post">
-           <input type="submit" value="Logout"/>
-       </form>
-   </div>
+   <script>
+       function submitById(elementId) {
+           document.getElementById(elementId).submit();
+       }
+   </script>
+
 </body>
 </html>

@@ -1,0 +1,168 @@
+.navbar-blue-grey {
+    background-color: #010063;
+    border-color: #bdbdbd;
+}
+.navbar-blue-grey .navbar-brand {
+    color: #f7f6f6;
+}
+.navbar-blue-grey .navbar-brand:hover,
+.navbar-blue-grey .navbar-brand:focus {
+    color: #49768e;
+}
+.navbar-blue-grey .navbar-text {
+    color: #f7f6f6;
+}
+.navbar-blue-grey .navbar-nav > li > a {
+    color: #f7f6f6;
+}
+.navbar-blue-grey .navbar-nav > li > a:hover,
+.navbar-blue-grey .navbar-nav > li > a:focus {
+    color: #49768e;
+}
+.navbar-blue-grey .navbar-nav > .active > a,
+.navbar-blue-grey .navbar-nav > .active > a:hover,
+.navbar-blue-grey .navbar-nav > .active > a:focus {
+    color: #49768e;
+    background-color: #bdbdbd;
+}
+.navbar-blue-grey .navbar-nav > .open > a,
+.navbar-blue-grey .navbar-nav > .open > a:hover,
+.navbar-blue-grey .navbar-nav > .open > a:focus {
+    color: #49768e;
+    background-color: #bdbdbd;
+}
+.navbar-blue-grey .navbar-toggle {
+    border-color: #bdbdbd;
+}
+.navbar-blue-grey .navbar-toggle:hover,
+.navbar-blue-grey .navbar-toggle:focus {
+    background-color: #bdbdbd;
+}
+.navbar-blue-grey .navbar-toggle .icon-bar {
+    background-color: #f7f6f6;
+}
+.navbar-blue-grey .navbar-collapse,
+.navbar-blue-grey .navbar-form {
+    border-color: #f7f6f6;
+}
+.navbar-blue-grey .navbar-link {
+    color: #f7f6f6;
+}
+.navbar-blue-grey .navbar-link:hover {
+    color: #49768e;
+}
+
+@media (max-width: 767px) {
+    .navbar-blue-grey .navbar-nav .open .dropdown-menu > li > a {
+        color: #f7f6f6;
+    }
+    .navbar-blue-grey .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-blue-grey .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #49768e;
+    }
+    .navbar-blue-grey .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-blue-grey .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-blue-grey .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #49768e;
+        background-color: #bdbdbd;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+    color: #333;
+    text-decoration: none;
+}
+.btn:active,
+.btn.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+.btn-dark-blue {
+    color: #ffffff;
+    background-color: #2A3B6E;
+    border-color: #2A3B6E;
+}
+
+.btn-dark-blue:hover,
+.btn-dark-blue:focus,
+.btn-dark-blue:active,
+.btn-dark-blue.active,
+.open .dropdown-toggle.btn-dark-blue {
+    color: #ffffff;
+    background-color: #3754A8;
+    border-color: #2A3B6E;
+}
+
+.btn-dark-blue:active,
+.btn-dark-blue.active,
+.open .dropdown-toggle.btn-dark-blue {
+    background-image: none;
+}
+
+.btn-dark-blue.disabled,
+.btn-dark-blue[disabled],
+fieldset[disabled] .btn-dark-blue,
+.btn-dark-blue.disabled:hover,
+.btn-dark-blue[disabled]:hover,
+fieldset[disabled] .btn-dark-blue:hover,
+.btn-dark-blue.disabled:focus,
+.btn-dark-blue[disabled]:focus,
+fieldset[disabled] .btn-dark-blue:focus,
+.btn-dark-blue.disabled:active,
+.btn-dark-blue[disabled]:active,
+fieldset[disabled] .btn-dark-blue:active,
+.btn-dark-blue.disabled.active,
+.btn-dark-blue[disabled].active,
+fieldset[disabled] .btn-dark-blue.active {
+    background-color: #2A3B6E;
+    border-color: #2A3B6E;
+}
+
+.btn-dark-blue .badge {
+    color: #2A3B6E;
+    background-color: #ffffff;
+}
