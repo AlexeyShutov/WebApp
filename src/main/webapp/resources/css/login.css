@@ -26,13 +26,10 @@ input {
     font-size: 14px;
     margin-bottom: 10px;
     background-color: #FFFFFF;
-    padding-left: 30px;
+    padding-left: 27px;
 }
 
-.form-username {
-    background: #FFFFFF url("/resources/images/account-user.png") no-repeat scroll 1px 1px;
-}
-
-.form-password {
-    background: #FFFFFF url("/resources/images/account-password.png") no-repeat scroll 1px 1px;
+.login-input span {
+    margin-right: -25px;
+    position: relative;
 }

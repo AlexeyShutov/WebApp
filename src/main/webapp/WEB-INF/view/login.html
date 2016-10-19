@@ -7,6 +7,7 @@
     <title>Log In DMS App</title>
     <link href="../../resources/css/bootstrap.css" th:href="@{/resources/css/bootstrap.css}" rel="stylesheet" />
     <link href="../../resources/css/custom.bootstrap.css" th:href="@{/resources/css/custom.bootstrap.css}" rel="stylesheet" />
+    <link href="../../resources/css/font-awesome.css" th:href="@{/resources/css/font-awesome.css}" rel="stylesheet" />
     <link href="../../resources/css/login.css" th:href="@{/resources/css/login.css}" rel="stylesheet"/>
 
 </head>
@@ -20,11 +21,13 @@
         <div th:if="${param.logout}" class="alert alert-info">
             You have been logged out
         </div>
-        <div>
-            <input class="form-username" type="text" name="username" placeholder="Enter Username">
+        <div class="login-input">
+            <span class="fa fa-user fa-lg"></span>
+            <input type="text" name="username" placeholder="Enter Username">
         </div>
-        <div>
-            <input class="form-password" type="password" name="password" placeholder="Enter Password">
+        <div class="login-input">
+            <span class="fa fa-lock fa-lg"></span>
+            <input type="password" name="password" placeholder="Enter Password">
         </div>
         <div>
             <button type="submit" class="btn btn-dark-blue">Log in</button>
