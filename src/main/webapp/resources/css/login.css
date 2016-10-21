@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
-    background: url("../images/login.jpg") no-repeat;
-    background-size: 100%;
+    background-size: contain;
+    background: url("../images/login.jpg") no-repeat center;
 }
 
 .container {
@@ -27,9 +27,25 @@ input {
     margin-bottom: 10px;
     background-color: #FFFFFF;
     padding-left: 27px;
+    border-radius: 5px;
+    border: 1px solid #DDD;
 }
 
-.login-input span {
-    margin-right: -25px;
-    position: relative;
+.login-container::before {
+    position: absolute;
+    font-family: "FontAwesome";
+    padding-left: 6px;
+    padding-top: 1px;
+    font-size: 20px;
+    color: #2A3B6E;
+}
+
+.login-container.username-container:before {
+    content: "\f007";
+}
+
+.login-container.password-container:before {
+    padding-left: 7px;
+    font-size: 22px;
+    content: "\f023"
 }
