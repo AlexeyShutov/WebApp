@@ -1,3 +1,5 @@
+-- ================================================= CREATE TABLES =================================================
+
 CREATE TABLE USERS (
   ID INT(10) NOT NULL PRIMARY KEY,
   USERNAME VARCHAR(30) NOT NULL,
@@ -13,9 +15,19 @@ CREATE TABLE AUTHORITIES (
 
 CREATE UNIQUE INDEX X_AUTH_USERNAME ON AUTHORITIES (USER_ID, AUTHORITY);
 
+CREATE TABLE PROJECT (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50),
+  description VARCHAR(2000),
+  start_date DATE,
+  end_date DATE,
+  PRIMARY KEY (id)
+);
 
-INSERT INTO USERS(ID, USERNAME, PASSWORD, ENABLED) VALUES (1, 'admin', 'admin', true);
-INSERT INTO USERS(ID, USERNAME, PASSWORD, ENABLED) VALUES (2, 'alex', 'alex', true);
+-- ================================================= INSERT DATA  =================================================
+
+INSERT INTO USERS(ID, USERNAME, PASSWORD, ENABLED) VALUES (1, 'admin', '$2a$10$Lo7mVYWfrlw16F10lZA7u.JfpZt6UPIoVeVVgmMCp1RraGcjHhp.S', true);
+INSERT INTO USERS(ID, USERNAME, PASSWORD, ENABLED) VALUES (2, 'alex', '$2a$10$AywqSYqgpuRAeZc81.62L.HvRcepJu.WV/7QEiAu.htUQyWfu4cUq', true);
 
 INSERT INTO AUTHORITIES (USER_ID, AUTHORITY) VALUE (1, 'ROLE_ADMIN');
 INSERT INTO AUTHORITIES (USER_ID, AUTHORITY) VALUE (1, 'ROLE_USER');
