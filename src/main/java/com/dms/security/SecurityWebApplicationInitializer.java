@@ -1,4 +1,4 @@
-package com.dms.service.security;
+package com.dms.security;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

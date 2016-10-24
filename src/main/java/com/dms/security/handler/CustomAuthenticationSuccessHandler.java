@@ -1,4 +1,4 @@
-package com.dms.service.security;
+package com.dms.security.handler;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;

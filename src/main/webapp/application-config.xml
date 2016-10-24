@@ -46,7 +46,7 @@
     <bean id="persistenceExceptionProcessor"
           class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
-    <bean id="customAuthenticationSuccessHandler" class="com.dms.service.security.CustomAuthenticationSuccessHandler"/>
+    <bean id="customAuthenticationSuccessHandler" class="com.dms.security.handler.CustomAuthenticationSuccessHandler"/>
 
     <bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
