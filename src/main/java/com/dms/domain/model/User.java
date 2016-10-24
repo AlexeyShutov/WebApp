@@ -1,9 +1,7 @@
 package com.dms.domain.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinTable;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "USER")
@@ -27,14 +25,14 @@ public class User extends AbstractEntity {
     @Column(name = "enabled")
     private Boolean enabled;
 
-//    @Column(name = "department")
-//    private Department department;
+    @ManyToOne
+    private Department department;
 
-//    @Column(name = "position")
-//    private Position position;
+    @ManyToOne
+    private Position position;
 
-//    @JoinTable
-//    private Set<Role> roles;
+    @ManyToMany
+    private Set<Authorities> authorities;
 
     public String getName() {
         return name;
@@ -82,6 +80,30 @@ public class User extends AbstractEntity {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public Set<Authorities> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Set<Authorities> authorities) {
+        this.authorities = authorities;
     }
 }
 
