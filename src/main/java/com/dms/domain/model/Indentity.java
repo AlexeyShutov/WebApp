@@ -3,7 +3,7 @@ package com.dms.domain.model;
 import javax.persistence.*;
 
 @MappedSuperclass
-public class AbstractEntity {
+public class Indentity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

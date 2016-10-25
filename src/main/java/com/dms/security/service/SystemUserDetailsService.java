@@ -18,7 +18,7 @@ public class SystemUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userService.findByUsername(username);
 
-        // TODO: if user is null throw exception
+
 
         return new SystemUserDetails(user);
     }

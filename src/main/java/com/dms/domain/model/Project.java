@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "PROJECT")
-public class Project extends AbstractUserEntity {
+public class Project extends AuditingInfo {
 
     @Column(name = "name")
     private String name;

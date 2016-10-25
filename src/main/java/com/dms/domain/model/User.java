@@ -5,7 +5,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "USER")
-public class User extends AbstractEntity {
+public class User extends Indentity {
 
     @Column(name = "name")
     private String name;

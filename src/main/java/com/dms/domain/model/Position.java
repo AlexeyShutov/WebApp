@@ -5,5 +5,5 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Position extends AbstractEntity {
+public class Position extends Indentity {
 }

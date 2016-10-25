@@ -5,5 +5,5 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Department extends AbstractEntity {
+public class Department extends Indentity {
 }
