@@ -3,5 +3,5 @@ package com.dms.domain.model;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class AuditingInfo extends Indentity {
+public class AuditingInfo extends Identity {
 }

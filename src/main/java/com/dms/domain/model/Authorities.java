@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "AUTHORITIES")
-public class Authorities extends Indentity implements GrantedAuthority {
+public class Authorities extends Identity implements GrantedAuthority {
 
     @Column(name = "authority")
     private String authority;
