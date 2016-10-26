@@ -1,9 +1,8 @@
 package com.dms.domain.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "PROJECT")
@@ -21,9 +20,12 @@ public class Project extends AuditingInfo {
     @Column(name = "end_date")
     private Date endDate;
 
-    // Set<User> participants;
+    @ManyToMany
+    private Set<User> participants;
 
-    // User manager;
+    @OneToOne
+    @JoinColumn(name = "manager_id")
+    private User manager;
 
     public String getName() {
         return name;
@@ -55,5 +57,21 @@ public class Project extends AuditingInfo {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Set<User> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(Set<User> participants) {
+        this.participants = participants;
+    }
+
+    public User getManager() {
+        return manager;
+    }
+
+    public void setManager(User manager) {
+        this.manager = manager;
     }
 }
