@@ -7,19 +7,19 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public interface Repository<T extends Identity> {
+public interface BaseRepository<T extends Identity> {
 
-    Set<T> get();
+    Set<T> getAll();
 
     default Optional<T> get(Integer id) {
-        return get()
+        return getAll()
                 .stream()
                 .filter(entity -> entity.getId().equals(id))
                 .findAny();
     }
 
     default Set<T> get(Predicate<T> predicate) {
-        return get()
+        return getAll()
                 .stream()
                 .filter(predicate)
                 .collect(Collectors.toSet());

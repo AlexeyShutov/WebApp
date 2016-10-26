@@ -1,6 +1,7 @@
 package com.dms.domain.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -25,9 +26,11 @@ public class User extends Identity {
     @Column(name = "enabled")
     private Boolean enabled;
 
+    @NotNull
     @ManyToOne
     private Department department;
 
+    @NotNull
     @ManyToOne
     private Position position;
 
@@ -105,6 +108,5 @@ public class User extends Identity {
     public void setAuthorities(Set<Authorities> authorities) {
         this.authorities = authorities;
     }
+
 }
-
-
