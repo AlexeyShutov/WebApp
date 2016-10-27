@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name = "DEPARTMENT")
 public class Department extends Identity {
 
     @Column(name = "name")

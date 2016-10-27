@@ -15,11 +15,23 @@ public class Authorities extends Identity implements GrantedAuthority {
     @Column(name = "authority")
     private String authority;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "authorities")
     private Set<User> users;
 
     @Override
     public String getAuthority() {
-        return this.authority;
+        return authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

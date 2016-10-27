@@ -26,15 +26,19 @@ public class User extends Identity {
     @Column(name = "enabled")
     private Boolean enabled;
 
-    @NotNull
     @ManyToOne
+    @JoinColumn(name = "department_id")
     private Department department;
 
     @NotNull
     @ManyToOne
-    private Position position;
+    @JoinColumn(name = "current_position_id")
+    private CurrentPosition currentPosition;
 
     @ManyToMany
+    @JoinTable(name = "users_authorities",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "authority_id"))
     private Set<Authorities> authorities;
 
     public String getFirstName() {
@@ -93,12 +97,12 @@ public class User extends Identity {
         this.department = department;
     }
 
-    public Position getPosition() {
-        return position;
+    public CurrentPosition getCurrentPosition() {
+        return currentPosition;
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+    public void setCurrentPosition(CurrentPosition currentPosition) {
+        this.currentPosition = currentPosition;
     }
 
     public Set<Authorities> getAuthorities() {

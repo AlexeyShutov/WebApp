@@ -8,9 +8,9 @@ public class BCryptEncoderTest {
     @Test
     public void encodePassword() {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodedPassword = passwordEncoder.encode("alex");
+        String encodedPassword = passwordEncoder.encode("admin");
         System.out.println(encodedPassword);
-        encodedPassword = passwordEncoder.encode("admin");
+        encodedPassword = passwordEncoder.encode("alex");
         System.out.println(encodedPassword);
     }
 }

@@ -4,7 +4,6 @@ import com.dms.domain.model.User;
 import com.dms.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +23,6 @@ public class UserService {
         if (user == null)
             throw new UsernameNotFoundException("User not found");
 
-        return new User();
+        return user;
     }
 }

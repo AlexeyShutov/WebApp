@@ -6,8 +6,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table
-public class Position extends Identity {
+@Table(name = "CURRENT_POSITION")
+public class CurrentPosition extends Identity {
 
     @Column(name = "name")
     private String name;

@@ -21,6 +21,9 @@ public class Project extends AuditingInfo {
     private Date endDate;
 
     @ManyToMany
+    @JoinTable(name = "PROJECTS_USERS",
+            joinColumns = @JoinColumn(name = "project_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> participants;
 
     @OneToOne
