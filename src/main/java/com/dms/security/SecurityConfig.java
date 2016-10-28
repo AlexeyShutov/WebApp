@@ -1,6 +1,7 @@
 package com.dms.security;
 
 import com.dms.security.handler.CustomAuthenticationSuccessHandler;
+import com.dms.security.service.SystemUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -23,11 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private SystemUserDetailsService userDetailsService;
 
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-        authenticationManagerBuilder
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(bCryptPasswordEncoder);
     }

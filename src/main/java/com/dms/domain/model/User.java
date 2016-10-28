@@ -35,7 +35,7 @@ public class User extends Identity {
     @JoinColumn(name = "current_position_id")
     private CurrentPosition currentPosition;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_authorities",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "authority_id"))
