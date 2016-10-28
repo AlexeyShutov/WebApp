@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Table(name = "DEPARTMENT")
 public class Department extends Identity {
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
 
     public String getName() {
