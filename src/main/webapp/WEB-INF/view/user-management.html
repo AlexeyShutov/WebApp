@@ -25,8 +25,8 @@
             <form id="logoutForm" th:action="@{/logout}" method="post"></form>
 
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/admin">Admin Home</a></li>
-                <li><a href="/admin/userManagement">User Management</a></li>
+                <li><a href="/admin">Admin Home</a></li>
+                <li class="active"><a href="/admin/userManagement">User Management</a></li>
                 <li><a href="#">Settings</a></li>
             </ul>
 
@@ -52,6 +52,10 @@
         </div>
     </div>
 </nav>
+
+<div style="padding-left: 20px">
+    CRUD operations for users
+</div>
 
 <script>
     function submitById(elementId) {

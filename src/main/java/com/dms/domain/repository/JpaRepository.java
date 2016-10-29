@@ -29,8 +29,8 @@ public class JpaRepository<T extends Identity> implements BaseRepository<T> {
     }
 
     @Override
-    public T add(T entity) {
-        return null;
+    public void add(T entity) {
+        return;
     }
 
     @Override

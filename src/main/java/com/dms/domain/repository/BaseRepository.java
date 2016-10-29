@@ -25,7 +25,7 @@ public interface BaseRepository<T extends Identity> {
                 .collect(Collectors.toSet());
     }
 
-    T add(T entity);
+    void add(T entity);
 
     T update(T entity);
 

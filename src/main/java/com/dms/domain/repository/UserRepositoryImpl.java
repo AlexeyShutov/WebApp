@@ -22,6 +22,10 @@ public class UserRepositoryImpl implements UserRepository {
                 .getSingleResult();
     }
 
+    public void add(User user) {
+        entityManager.persist(user);
+    }
+
     @Override
     public Set getAll() {
         return null;
@@ -38,8 +42,8 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public Identity add(Identity entity) {
-        return null;
+    public void add(Identity entity) {
+
     }
 
     @Override

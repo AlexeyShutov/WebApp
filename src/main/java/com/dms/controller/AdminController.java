@@ -20,9 +20,9 @@ public class AdminController extends BaseController {
         return "admin";
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    public String test() {
-        adminService.adminTest();
-        return "admin";
+    @RequestMapping(value = "/userManagement", method = RequestMethod.GET)
+    public String userManagement(ModelMap model) {
+        model.addAttribute("currentUser", super.getCurrentUsername());
+        return "user-management";
     }
 }
