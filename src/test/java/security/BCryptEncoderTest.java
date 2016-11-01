@@ -1,4 +1,4 @@
-package service.security;
+package security;
 
 import org.junit.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

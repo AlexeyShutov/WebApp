@@ -5,7 +5,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>application-config.xml</param-value>
+        <param-value>classpath:config/application-config.xml</param-value>
     </context-param>
     
     <listener>
