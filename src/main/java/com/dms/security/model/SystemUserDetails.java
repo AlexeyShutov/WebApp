@@ -1,6 +1,6 @@
 package com.dms.security.model;
 
-import com.dms.domain.model.Authorities;
+import com.dms.domain.model.Authority;
 import com.dms.domain.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +24,7 @@ public class SystemUserDetails implements UserDetails {
 
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<GrantedAuthority> authorities = new HashSet<>();
-        for (Authorities authority : user.getAuthorities()) {
+        for (Authority authority : user.getAuthorities()) {
             GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(authority.getAuthority());
             authorities.add(grantedAuthority);
         }

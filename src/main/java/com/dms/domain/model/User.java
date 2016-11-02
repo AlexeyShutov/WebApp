@@ -39,7 +39,7 @@ public class User extends Identity {
     @JoinTable(name = "users_authorities",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "authority_id"))
-    private Set<Authorities> authorities;
+    private Set<Authority> authorities;
 
     public String getFirstName() {
         return firstName;
@@ -105,11 +105,11 @@ public class User extends Identity {
         this.currentPosition = currentPosition;
     }
 
-    public Set<Authorities> getAuthorities() {
+    public Set<Authority> getAuthorities() {
         return authorities;
     }
 
-    public void setAuthorities(Set<Authorities> authorities) {
+    public void setAuthorities(Set<Authority> authorities) {
         this.authorities = authorities;
     }
 

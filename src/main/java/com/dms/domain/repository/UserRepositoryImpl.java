@@ -57,19 +57,15 @@ public class UserRepositoryImpl implements UserRepository {
         User userPersistent = getById(user.getId());
 
         if (userPersistent != null) {
-            entityManager.getTransaction().begin();
             userPersistent.setFirstName(user.getFirstName());
             userPersistent.setLastName(user.getLastName());
             userPersistent.setEmail(user.getEmail());
             userPersistent.setCurrentPosition(user.getCurrentPosition());
-            entityManager.getTransaction().commit();
         }
     }
 
     @Override
     public void delete(User user) {
-        entityManager.getTransaction().begin();
         entityManager.remove(user);
-        entityManager.getTransaction().commit();
     }
 }

@@ -9,22 +9,22 @@ import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name = "AUTHORITIES")
-public class Authorities extends Identity implements GrantedAuthority {
+@Table(name = "AUTHORITY")
+public class Authority extends Identity implements GrantedAuthority {
 
-    @Column(name = "authority")
-    private String authority;
+    @Column(name = "role")
+    private String role;
 
     @ManyToMany(mappedBy = "authorities")
     private Set<User> users;
 
     @Override
     public String getAuthority() {
-        return authority;
+        return role;
     }
 
-    public void setAuthority(String authority) {
-        this.authority = authority;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public Set<User> getUsers() {

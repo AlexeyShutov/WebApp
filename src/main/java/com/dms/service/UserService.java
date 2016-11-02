@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -44,11 +45,13 @@ public class UserService {
         userRepository.add(user);
     }
 
+    @Transactional
     public void update(User user) {
         getById(user.getId());
         userRepository.update(user);
     }
 
+    @Transactional
     public void delete(Integer id) {
         userRepository.delete(getById(id));
     }
